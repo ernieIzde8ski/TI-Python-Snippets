@@ -28,6 +28,11 @@ def GOBI_RAD(PARAM: str, *, IN_TERMS_OF_PI: bool = True) -> float:
     return 2 * GOBI(PARAM, RETURN_DECIMAL=True) * (pi if IN_TERMS_OF_PI else 1)
 
 
+def HERON(s1, s2, s3):
+    s = (s1 + s2 + s3) / 2
+    return sqrt(s * (s - s1) * (s - s2) * (s - s2))
+
+
 if __name__ == "__main__":
     PARAM0 = "ARMENIUM"
     PARAM1 = "ERNIE"
