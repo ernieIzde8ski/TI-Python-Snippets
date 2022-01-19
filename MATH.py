@@ -1,17 +1,13 @@
 import random
 from math import *
 
-# from time import *
-
 
 def GOBI(PARAM: str, *, RETURN_DECIMAL: bool = False) -> float:
     # Remove whitespace
     PARAM = "".join(PARAM.split())
     # Filter out non-text & set lowercase, then seed random
     string = "".join([I for I in PARAM if ord(I) < 256])
-    random.seed(
-        hash(string.lower()) or None
-    )
+    random.seed(hash(string.lower()) or None)
     DECIMAL = random.random()
     return DECIMAL if RETURN_DECIMAL else round(DECIMAL * 100, 2)
 
@@ -30,6 +26,7 @@ def GOBI_DEGR(PARAM: str) -> float:
 
 def GOBI_RAD(PARAM: str, *, IN_TERMS_OF_PI: bool = True) -> float:
     return 2 * GOBI(PARAM, RETURN_DECIMAL=True) * (pi if IN_TERMS_OF_PI else 1)
+
 
 if __name__ == "__main__":
     PARAM0 = "ARMENIUM"
